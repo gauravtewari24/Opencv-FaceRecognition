@@ -1,0 +1,23 @@
+<html>
+
+<body>
+    <img id="image">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+    <script>
+        const socket = io.connect('http://localhost:3000');
+        const fs = require('fs');
+        socket.on('image', (image) => {
+            const imgData = document.getElementById('image');
+            imgData.src = `data:image/jpeg;base64,${image}`;
+            // console.log('data', image);
+            // var Data = imgData.replace(/^data:image\/jpeg;base64,/, "");
+
+            //fs.writeFile("output.jpeg", Data, "base64", function (err) {
+            //  console.log(err);
+            //});
+        });
+    </script>
+</body>
+
+</html>

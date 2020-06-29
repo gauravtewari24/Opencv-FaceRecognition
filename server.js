@@ -37,10 +37,13 @@ while (count < 2) {
         }
         return grayImage.getRegion(faceRegion[0]);
     };
-    // get the path of the photo directory
+    //********************************************** */
+    // get the path of the photo directory from the sql database
+    //************BACK END TEAM WORK*********************//
     const basePath = './images_db';
     const subjectsPath = path.resolve(basePath, 'subjects');
-    const nameMappings = ['emma', 'tom', 'conan'];
+    const nameMappings = ['emma', 'tom', 'conan'];  ////Here the name of all the user should be there in this araay
+
     // get the absolute path
     const allFiles = fs.readdirSync(subjectsPath);
 
